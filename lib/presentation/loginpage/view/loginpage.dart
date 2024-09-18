@@ -1,4 +1,5 @@
 import 'package:codanto_test/core/constants/appcolors.dart';
+import 'package:codanto_test/core/constants/appconstants.dart';
 import 'package:codanto_test/core/constants/appdimentions.dart';
 import 'package:flutter/material.dart';
 
@@ -7,11 +8,13 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size=MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(),
       body: Column(
         children: [
           Container(
+            height: size.height*0.55,
+            width: double.infinity,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(AppDimensions.borderRadiusLarge),
@@ -22,9 +25,12 @@ class LoginPage extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: [
                   AppColors.background,
-                  AppColors.primary
+                  AppColors.primary,
                 ],
               ),
+            ),
+            child: const Image(
+              image: AssetImage(AppConstants.logo),
             ),
           ),
         ],
