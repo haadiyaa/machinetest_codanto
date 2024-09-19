@@ -7,24 +7,30 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    double gridPadding = screenWidth * 0.05;
+    double gridSpacing = screenWidth * 0.04;
+    double iconSize = screenWidth * 0.12; 
+    double containerSize = screenWidth * 0.4;
+
     return Column(
       children: [
-        const Text('Home'),
         Expanded(
           child: GridView.builder(
-            padding: const EdgeInsets.symmetric(
-                horizontal: AppDimensions.heightXLarge),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: AppDimensions.heightLarge,
-              crossAxisSpacing: AppDimensions.heightLarge,
-              crossAxisCount: 2,
+            padding: EdgeInsets.symmetric(horizontal: gridPadding),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              mainAxisSpacing: gridSpacing,
+              crossAxisSpacing: gridSpacing,
+              crossAxisCount: screenWidth < 600 ? 2 : 3,
             ),
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
               return Container(
-                padding: const EdgeInsets.all(AppDimensions.heightLarge),
-                decoration: const BoxDecoration(
-                  boxShadow: [
+                padding: EdgeInsets.all(gridSpacing),
+                decoration: BoxDecoration(
+                  boxShadow: const [
                     BoxShadow(
                       offset: Offset(5, 5),
                       blurRadius: AppDimensions.borderRadiusSmall,
@@ -32,30 +38,30 @@ class Home extends StatelessWidget {
                     ),
                   ],
                   color: AppColors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(
-                      AppDimensions.heightMedium,
-                    ),
-                  ),
+                  borderRadius: BorderRadius.circular(screenWidth * 0.03), 
                 ),
                 child: Column(
                   children: [
                     Container(
-                      height: 100,
-                      width: 100,
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 255, 159, 159),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(AppDimensions.heightSmall),
-                        ),
+                      height: containerSize * 0.5,
+                      width: containerSize * 0.5,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 255, 159, 159),
+                        borderRadius: BorderRadius.circular(screenWidth * 0.03),
                       ),
-                      child: const Icon(
+                      child: Icon(
                         Icons.image,
                         color: AppColors.primary,
-                        size: 50,
+                        size: iconSize,
                       ),
                     ),
-                    Text('data')
+                    SizedBox(height: screenHeight * 0.02),
+                    Text(
+                      'Data',
+                      style: TextStyle(
+                        fontSize: screenHeight * 0.02,
+                      ),
+                    )
                   ],
                 ),
               );
