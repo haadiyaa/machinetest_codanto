@@ -1,11 +1,11 @@
 import 'package:codanto_test/core/constants/appcolors.dart';
+import 'package:codanto_test/core/constants/appdimentions.dart';
 import 'package:flutter/material.dart';
 
 class AppTextStyles {
   static const TextStyle loginTitle = TextStyle(
-    fontSize: 24.0,
+    fontSize:AppDimensions.heightXLarge,
     fontWeight: FontWeight.bold,
-    color: AppColors.black,
   );
 
   static const TextStyle textFieldHint = TextStyle(
@@ -14,14 +14,22 @@ class AppTextStyles {
   );
 
   static const TextStyle forgotPassword = TextStyle(
-    fontSize: 12.0,
+    fontSize: 14.0,
     color: AppColors.forgotPassword,
-    decoration: TextDecoration.underline,
   );
 
   static const TextStyle buttonText = TextStyle(
-    fontSize: 16.0,
+    fontSize: 18.0,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const TextStyle drawerItems = TextStyle(
+    fontSize: 18.0,
     fontWeight: FontWeight.bold,
     color: AppColors.white,
+  );
+  static const TextStyle DrawerHeadText = TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.bold,
   );
 }
