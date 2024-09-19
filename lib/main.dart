@@ -1,4 +1,5 @@
 import 'package:codanto_test/presentation/view/loginpage/view/loginpage.dart';
+import 'package:codanto_test/presentation/view/splashpage/view/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
-      home: LoginPage(),
+      home: SplashScreen(),
     );
   }
 }
