@@ -2,8 +2,8 @@ import 'package:codanto_test/core/constants/appcolors.dart';
 import 'package:codanto_test/core/constants/appdimentions.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Homee extends StatelessWidget {
+  const Homee({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
               crossAxisSpacing: gridSpacing,
               crossAxisCount: 2 ,
             ),
-            itemCount: 5,
+            itemCount: 3,
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 padding: EdgeInsets.all(gridSpacing),
